@@ -3,7 +3,7 @@
 #this script takes two arguments, the file to be imported and the account name
 import_file="$1"
 account="$2"
-base_file_path="~/Desktop/hledger-import-script/script" #THIS NEEDS TO BE FIXED!
+base_file_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 #import configuration variables
 config_file="$base_file_path/config.sh"

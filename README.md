@@ -32,8 +32,6 @@ Configuration
     - All accounts must have a name.
     - Any acccount that you want to be able to use with `HLedgerImport.sh` or `config.sh` needs to have an associated rules file in `script/hledger-rules`.  (For illustration purposes, I've included the sample files from the [HLedger Repository](https://github.com/simonmichael/hledger/tree/master/examples/csv), but in practice these should be customized for your use-case.)  If you have no rules file, this field can be blank, but make sure to include a comma.
     - Sometimes a bank's csv export format is too complicted for HLedger's [rules syntax](https://hledger.org/import-csv.html).  In that case, it may be necessary to write your own pre-processing bash script before `hledger print` can work properly.  You can save your script in `script/pre-process-scripts/` and reference it when you define the account name.  If no pre-processing is needed, this field can be blank, but make sure to include a comma. (At this time, I don't have an example of this for illustration.)
-4. Update line 2 in `script/DownloadingFiles.sh` and line 6 in `script/HLedgerImport.sh` to refer to their current directory.  Otherwise, you will get errors when running these scripts from any other directory. (*This step is extraordinarily clunky, and I know there's probably an easy way to fix it, but I haven't figured out how yet.*)
-
 
 Use
 ===
@@ -91,8 +89,3 @@ Acknowledgements
 **Please Note**: What is provided in `script/hledger-rules/sample.csv.rules` and `example/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website.  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
 
 I use the sample files instead of my own because I'm not keen on sharing the financial instutions at which I personally store my money on the open web!
-
-Things to do
-============
-
-* line 2 in `script/DownloadingFiles.sh` and line 6 in `script/HLedgerImport.sh` both need a better way to determine the current directory

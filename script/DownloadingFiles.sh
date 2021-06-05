@@ -1,5 +1,5 @@
 #import configuration variables
-base_file_path="~/Desktop/hledger-import-script/script" #THIS NEEDS TO BE FIXED!
+base_file_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 config_file="$base_file_path/config.sh"
 source $config_file
 
