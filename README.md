@@ -66,7 +66,7 @@ Tutorial
 To see how this works, run the following commands after cloning this repository:
 
 ~~~bash
-cd hledger-import-script/example/
+cd hledger-importing-scripts/example/
 
 alias dl='source ../script/DownloadingFiles.sh'
 alias bulkim='../script/BulkImport.sh'
