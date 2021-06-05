@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# path to current ledger file
-ledger_file=~/Desktop/hledger-import-script/sample-ledger-data/sample-ledger-data/ledger.journal
+# path to current ledger file -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
+ledger_file="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../example/ledger.journal"
 
-#path to data tree
-path_to_finances=~/Desktop/hledger-import-script/sample-ledger-data/sample-ledger-data/data/
+#path to data tree -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
+path_to_finances="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../example/data/"
 
 
 # NameOfAcct,    hledger rules file, data pre-processing script
