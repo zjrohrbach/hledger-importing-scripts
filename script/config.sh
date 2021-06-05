@@ -7,9 +7,9 @@ ledger_file=~/Desktop/hledger-import-script/sample-ledger-data/sample-ledger-dat
 path_to_finances=~/Desktop/hledger-import-script/sample-ledger-data/sample-ledger-data/data/
 
 
-# NameOfAcct,  hledger rules file,    data pre-processing script
+# NameOfAcct,    hledger rules file, data pre-processing script
 accounts_array=(
-  "name,        something.csv.rules,                    "
+  "sample-bank,  sample.csv.rules,                    "
 )
 
 
