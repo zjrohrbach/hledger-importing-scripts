@@ -6,7 +6,7 @@ I use [Ledger](https://www.ledger-cli.org) and [HLedger](https://www.hledger.org
 1. Organize `csv` transaction data and `pdf` statements from my financial institutions using `DownloadingFiles.sh`.
 2. Import `csv` transaction data into a ledger file using `HLedgerImport.sh` and `BulkImport.sh`
 
-All the legwork is being done by the fantastic [csv importing functionality](https://hledger.org/import-csv.html) of `hledger print`.
+All the legwork is being done by the [csv importing functionality](https://hledger.org/import-csv.html) of `hledger print`.
 
 This project is a re-implementation of some of the scripts at <https://github.com/zjrohrbach/financialscripts> in order to make them more portable.
 
@@ -63,9 +63,36 @@ Here's how I use the scripts:
     bulkim /path/to/data/02/to-import.txt >> /path/to/ledger.journal
     ~~~
 
+Tutorial
+========
+To see how this works, run the following commands after cloning this repository:
+
+~~~bash
+cd hledger-import-script/example/
+
+alias dl='source ../script/DownloadingFiles.sh'
+alias bulkim='../script/BulkImport.sh'
+
+dl ck
+dl cm #when prompted, type '7' for July.
+dl bankdata.csv
+dl statement.pdf
+dl ck
+
+bulkim data/01/to-import.txt 
+
+#if you like the result, run it again and append to your journal
+bulkim data/01/to-import.txt >> ledger.journal
+~~~
+
+Acknowledgements
+===============
+
+**Please Note**: What is provided in `script/hledger-rules/sample.csv.rules` and `example/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website.  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
+
+I use the sample files instead of my own because I'm not keen on sharing the financial instutions at which I personally store my money on the open web!
 
 Things to do
 ============
 
-* get a working illustration in `script/config.sh` and `sample-ledger-data/`
 * line 2 in `script/DownloadingFiles.sh` and line 6 in `script/HLedgerImport.sh` both need a better way to determine the current directory
