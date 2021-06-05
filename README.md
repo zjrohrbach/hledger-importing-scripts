@@ -73,8 +73,8 @@ alias bulkim='../script/BulkImport.sh'
 
 dl ck
 dl cm #when prompted, type '7' for July.
-dl bankdata.csv
-dl statement.pdf
+dl download/bankdata.csv
+dl download/statement.pdf
 dl ck
 
 bulkim data/01/to-import.txt 
