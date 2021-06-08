@@ -86,11 +86,6 @@ bulkim data/07/to-import.txt >> ledger.journal
 Acknowledgements
 ===============
 
-**Please Note**: What is provided in `script/hledger-rules/sample.csv.rules` and `example/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website.  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
+**Please Note**: What is provided in `script/hledger-rules/sample.csv.rules` and `example/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website (*with a small change made at line 10 to ignore the balance-assertion feature*).  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
 
 I use the sample files instead of my own because I'm not keen on sharing the financial instutions at which I personally store my money on the open web!
-
-To Do
-======
-
-Figure out why `HLedgerImport.sh` does nothhing to `bankdata.csv`
