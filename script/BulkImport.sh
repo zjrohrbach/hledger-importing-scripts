@@ -1,4 +1,10 @@
 #!/bin/bash
+
+#import configuration variables
+base_file_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+config_file="$base_file_path/config.sh"
+source $config_file
+
 to_import_file="$1"
 temporary_file=/tmp/temporary.jrnl
 
@@ -12,7 +18,7 @@ touch $temporary_file
 
 while read line
 do
-	eval "~/.financialscripts/HLedgerImport.sh $line >> $temporary_file"
+	eval "${path_to_wd}HLedgerImport.sh $line >> $temporary_file"
 done < $to_import_file
 
 ledger -f $temporary_file --sort date print | sed 's/\(     \$\)/          \1/'

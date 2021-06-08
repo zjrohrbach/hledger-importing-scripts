@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#path to this working directy -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
+path_to_wd="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/"
+
 # path to current ledger file -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
 ledger_file="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../example/ledger.journal"
 
