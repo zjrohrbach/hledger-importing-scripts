@@ -68,15 +68,24 @@ To see how this works, run the following commands after cloning this repository:
 ~~~bash
 cd hledger-importing-scripts/EXAMPLE/
 
+#define aliases for ease of use
 alias dl='source ../DownloadingFiles.sh'
 alias bulkim='../BulkImport.sh'
 
-dl ck
 dl cm #when prompted, type '7' for July.
+
+dl ck #notice that no files have been added to your data/ structure yet
+
+#the download/ directory is supposed to simulate 
+#~/Downloads/.  The two files in this directory
+#simulate a csv file and a statement downloaded
+#from your bank.
 dl download/bankdata.csv
 dl download/statement.pdf
-dl ck
 
+dl ck #now these files have been added
+
+#run this command to see how the import will look
 bulkim data/07/to-import.txt 
 
 #if you like the result, run it again and append to your journal
