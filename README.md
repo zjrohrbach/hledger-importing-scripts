@@ -13,7 +13,7 @@ This project is a re-implementation of some of the scripts at <https://github.co
 Configuration
 =============
 
-1. These scripts assume that you have a ledger journal and a data directory set up as below.  A sample setup is provided in the `sample-ledger-data` directory.
+1. These scripts assume that you have a ledger journal and a data directory set up as below.  A sample setup is provided in the `EXAMPLE/` directory.
 ~~~
   data/ 
     |
@@ -63,7 +63,7 @@ Here's how I use the scripts:
 
 Tutorial
 ========
-To see how this works, run the following commands after cloning this repository:
+To see how this works, I've set up an example.  Run the following commands after cloning this repository:
 
 ~~~bash
 cd hledger-importing-scripts/EXAMPLE/
