@@ -30,8 +30,8 @@ Configuration
 2. Set the paths to `$ledger_file` and `$path_to_finances` appropriately in `config.sh`
 3. Fill in the `$accounts_array` in `config.sh` to include all accounts you want to organize in your `data/` directory.  
     - All accounts must have a name.
-    - Any acccount that you want to be able to use with `HLedgerImport.sh` or `config.sh` needs to have an associated rules file in `script/hledger-rules`.  (For illustration purposes, I've included the sample files from the [HLedger Repository](https://github.com/simonmichael/hledger/tree/master/examples/csv), but in practice these should be customized for your use-case.)  If you have no rules file, this field can be blank, but make sure to include a comma.
-    - Sometimes a bank's csv export format is too complicted for HLedger's [rules syntax](https://hledger.org/import-csv.html).  In that case, it may be necessary to write your own pre-processing bash script before `hledger print` can work properly.  You can save your script in `script/pre-process-scripts/` and reference it when you define the account name.  If no pre-processing is needed, this field can be blank, but make sure to include a comma. (At this time, I don't have an example of this for illustration.)
+    - Any acccount that you want to be able to use with `HLedgerImport.sh` or `config.sh` needs to have an associated rules file in `hledger-rules/`.  (For illustration purposes, I've included the sample files from the [HLedger Repository](https://github.com/simonmichael/hledger/tree/master/examples/csv), but in practice these should be customized for your use-case.)  If you have no rules file, this field can be blank, but make sure to include a comma.
+    - Sometimes a bank's csv export format is too complicted for HLedger's [rules syntax](https://hledger.org/import-csv.html).  In that case, it may be necessary to write your own pre-processing bash script before `hledger print` can work properly.  You can save your script in `pre-process-scripts/` and reference it when you define the account name.  If no pre-processing is needed, this field can be blank, but make sure to include a comma. (At this time, I don't have an example of this for illustration.)
 
 Use
 ===
@@ -55,7 +55,7 @@ Here's how I use the scripts:
     ~~~bash
     bulkim /path/to/data/02/to-import.txt
     ~~~  
-4. Sometimes I find that I should update my HLedger rules files in `script/hledger-rules` and then run step 3 again.
+4. Sometimes I find that I should update my HLedger rules files in `hledger-rules/` and then run step 3 again.
 5. Once I'm happy with the output, I append it to the end of my ledger journal using 
     ~~~bash
     bulkim /path/to/data/02/to-import.txt >> /path/to/ledger.journal
@@ -66,10 +66,10 @@ Tutorial
 To see how this works, run the following commands after cloning this repository:
 
 ~~~bash
-cd hledger-importing-scripts/example/
+cd hledger-importing-scripts/EXAMPLE/
 
-alias dl='source ../script/DownloadingFiles.sh'
-alias bulkim='../script/BulkImport.sh'
+alias dl='source ../DownloadingFiles.sh'
+alias bulkim='../BulkImport.sh'
 
 dl ck
 dl cm #when prompted, type '7' for July.
@@ -86,6 +86,6 @@ bulkim data/07/to-import.txt >> ledger.journal
 Acknowledgements
 ===============
 
-**Please Note**: What is provided in `script/hledger-rules/sample.csv.rules` and `example/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website (*with a small change made at line 10 to ignore the balance-assertion feature*).  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
+**Please Note**: What is provided in `hledger-rules/sample.csv.rules` and `EXAMPLE/download/bankdata.csv` is nothing more than the example given in the [csv format page](https://hledger.org/hledger.html#csv-format) on the HLedger Project Website (*with a small change made at line 10 to ignore the balance-assertion feature*).  Other examples rules files are available at <https://github.com/simonmichael/hledger/tree/master/examples/csv>.
 
 I use the sample files instead of my own because I'm not keen on sharing the financial instutions at which I personally store my money on the open web!

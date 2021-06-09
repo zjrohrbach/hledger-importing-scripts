@@ -4,10 +4,10 @@
 path_to_wd="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/"
 
 # path to current ledger file -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
-ledger_file="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../example/ledger.journal"
+ledger_file="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/EXAMPLE/ledger.journal"
 
 #path to data tree -- IT IS RECOMMENDED THAT THIS IS CHANGED TO A PLAINTEXT URL
-path_to_finances="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../example/data/"
+path_to_finances="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/EXAMPLE/data/"
 
 
 # NameOfAcct,    hledger rules file, data pre-processing script
